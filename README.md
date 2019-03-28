@@ -5,59 +5,57 @@
 
 
 
-/**
- * 吃饭
- */
-public interface IEat {
+/**                 
+ * 吃饭                 
+ */                 
+public interface IEat {                 
 
-    default void execute(){
-        cook();
-        eat();
-        wash();
-    }
-    default void cook(){
-        System.out.println("做饭。");
-    }
+    default void execute(){                 
+        cook();                 
+        eat();                 
+        wash();                 
+    }                 
+    default void cook(){                 
+        System.out.println("做饭。");                 
+    }                 
+                 
+    void eat();                 
+                 
+    default void wash(){                 
+        System.out.println("刷锅刷碗。");                 
+    }                 
+}                 
+                 
+                 
+public class EatFish implements IEat {                 
+    @Override                 
+    public void eat() {                 
+        System.out.println("吃鱼。");                 
+    }                 
+}                 
+                 
+                 
+public class EatRice implements IEat {                 
+    @Override                                  
+    public void eat() {                 
+        System.out.println("吃米饭。");                 
+    }                 
+}                 
 
-    void eat();
-
-    default void wash(){
-        System.out.println("刷锅刷碗。");
-    }
-}
-
-
-public class EatFish implements IEat {
-    @Override
-    public void eat() {
-        System.out.println("吃鱼。");
-    }
-}
-
-
-public class EatRice implements IEat {
-    @Override
-    public void eat() {
-        System.out.println("吃米饭。");
-    }
-}
-
-
-
-
-
-public class IEatTest {
-
-    public static void main(String[] args) {
-        IEat eatFish = new EatFish();
-        eatFish.execute();
-
-        System.out.println("=======================");
-        
-        IEat eatRice = new EatRice();
-        eatRice.execute();
-    }
-}
+             
+                 
+public class IEatTest {                 
+                 
+    public static void main(String[] args) {                 
+        IEat eatFish = new EatFish();                 
+        eatFish.execute();                 
+                 
+        System.out.println("=======================");                 
+                         
+        IEat eatRice = new EatRice();                 
+        eatRice.execute();                 
+    }                                  
+}                 
 
 
 
